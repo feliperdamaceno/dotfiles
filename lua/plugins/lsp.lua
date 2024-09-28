@@ -37,6 +37,13 @@ return {
     config = function()
       local config = require("mason-lspconfig")
       config.setup({
+        ensure_installed = {
+          "lua_ls",
+          "ts_ls",
+          "html",
+          "tailwindcss",
+          "gopls"
+        },
         automatic_installation = true
       })
     end
