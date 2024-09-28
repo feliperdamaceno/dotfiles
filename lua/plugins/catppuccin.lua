@@ -6,7 +6,7 @@ return {
     priority = 1000,
     config = function()
       local config = require("catppuccin")
-      
+
       config.setup({
         no_italic = true,
         no_bold = true,

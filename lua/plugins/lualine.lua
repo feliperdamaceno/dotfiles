@@ -6,7 +6,8 @@ return {
 
     config.setup({
       options = {
-        theme = "dracula"
+        icons_enabled = true,
+        theme = "nightfly"
       },
       sections = {
         lualine_x = {},

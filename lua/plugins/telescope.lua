@@ -10,6 +10,7 @@ return {
       local config = require("telescope")
 
       config.setup({
+        file_ignore_patterns = { "node%_modules/.*" },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({}),

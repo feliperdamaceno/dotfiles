@@ -19,7 +19,7 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  checker = { 
+  checker = {
     enabled = true,
     frequency = 86400
   },

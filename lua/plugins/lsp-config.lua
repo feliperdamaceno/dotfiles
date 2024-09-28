@@ -4,10 +4,10 @@ return {
     lazy = false,
     config = function()
       require("mason").setup()
-    end,
+    end
   },
   {
-    "neovim/nvim-lspconfig",
+    "williamboman/mason-lspconfig.nvim",
     lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
@@ -25,16 +25,6 @@ return {
       lspconfig.tailwindcss.setup({})
       lspconfig.gopls.setup({})
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    config = function()
       local config = require("mason-lspconfig")
       config.setup({
         ensure_installed = {
@@ -47,5 +37,15 @@ return {
         automatic_installation = true
       })
     end
+  },
+  {
+    "neovim/nvim-lspconfig",
+    lazy = false,
+    config = function()
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
   },
 }
