@@ -19,22 +19,16 @@ return {
         require('cmp_nvim_lsp').default_capabilities()
       )
 
-      lspconfig.lua_ls.setup({})
-      lspconfig.ts_ls.setup({})
-      lspconfig.html.setup({})
-      lspconfig.tailwindcss.setup({})
-      lspconfig.gopls.setup({})
+      local lspservers = require("lua.config.lspservers")
 
-      local config = require("mason-lspconfig")
-      config.setup({
-        ensure_installed = {
-          "lua_ls",
-          "ts_ls",
-          "html",
-          "tailwindcss",
-          "gopls"
-        },
-        automatic_installation = true
+      for _, server in ipairs(lspservers.servers) do
+        local config = lspservers.custom_configs[server] or {}
+        lspconfig[server].setup(config)
+      end
+
+      local mason_lspconfig = require("mason-lspconfig")
+      mason_lspconfig.setup({
+        ensure_installed = lspservers.servers,
       })
     end,
   },
