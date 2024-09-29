@@ -2,7 +2,6 @@ return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
   lazy = false,
-  cmd = { "NvimTreeToggle", "NvimTreeFocus" },
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
@@ -42,6 +41,5 @@ return {
     })
 
     vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
-    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>")
   end,
 }

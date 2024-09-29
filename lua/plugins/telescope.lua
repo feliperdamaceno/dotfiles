@@ -10,7 +10,24 @@ return {
       local config = require("telescope")
 
       config.setup({
-        file_ignore_patterns = { "node%_modules/.*" },
+        defaults = {
+          prompt_prefix = "   ",
+          selection_caret = " ",
+          entry_prefix = " ",
+          sorting_strategy = "ascending",
+          horizontal = {
+            prompt_position = "top",
+            preview_width = 0.60,
+          },
+          layout_config = {
+            width = 0.70,
+            height = 0.70,
+          },
+          mappings = {
+            n = { ["q"] = require("telescope.actions").close },
+          },
+        },
+        file_ignore_patterns = { "node_modules/.*" },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({}),
