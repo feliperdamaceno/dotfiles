@@ -25,6 +25,9 @@ return {
         root_folder_label = false,
         highlight_git = true,
         icons = {
+          show = {
+            git = false,
+          },
           glyphs = {
             default = "󰈚",
             folder = {

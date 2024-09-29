@@ -17,12 +17,22 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 require("mappings")
-require("lazy").setup({
+
+local lazy = require("lazy")
+lazy.setup({
   spec = {
     { import = "plugins" },
   },
   checker = {
     enabled = true,
     frequency = 86400, -- once a day
+  },
+  ui = {
+    icons = {
+      ft = "",
+      lazy = "󰂠 ",
+      loaded = "",
+      not_loaded = "",
+    },
   },
 })
