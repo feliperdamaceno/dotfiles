@@ -16,6 +16,14 @@ local servers = {
   gopls = {
     filetypes = { "go", "gomod", "gowork", "gotmlp" },
     root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        analyses = {
+          unusedparams = true,
+        },
+      },
+    },
   },
 }
 
