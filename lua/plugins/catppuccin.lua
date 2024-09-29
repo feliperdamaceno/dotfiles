@@ -14,6 +14,6 @@ return {
       })
 
       vim.cmd.colorscheme "catppuccin-frappe"
-    end
+    end,
   }
 }
