@@ -1,12 +1,6 @@
-local servers = {
-  "lua_ls",
-  "ts_ls",
-  "html",
-  "tailwindcss",
-  "gopls"
-}
+local util = require("lspconfig/util")
 
-local custom_configs = {
+local servers = {
   lua_ls = {
     settings = {
       Lua = {
@@ -16,9 +10,15 @@ local custom_configs = {
       },
     },
   },
+  ts_ls = {},
+  html = {},
+  tailwindcss = {},
+  gopls = {
+    filetypes = { "go", "gomod", "gowork", "gotmlp" },
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  },
 }
 
 return {
   servers = servers,
-  custom_configs = custom_configs,
 }

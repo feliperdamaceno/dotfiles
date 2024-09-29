@@ -5,7 +5,7 @@ return {
     local conform = require("conform")
 
     conform.setup({
-      formatters_by_ft = require("lua.config.formatters")
+      formatters_by_ft = require("config.formatters")
     })
   end,
 }
