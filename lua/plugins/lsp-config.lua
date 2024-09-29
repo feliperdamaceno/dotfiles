@@ -42,10 +42,11 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "get hover information" })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "go to definition" })
+      vim.keymap.set("n", "<leader>gtd", vim.lsp.buf.type_definition, { desc = "go to type definition" })
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "go to references" })
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "open code actions" })
     end,
   },
 }

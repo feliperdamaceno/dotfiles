@@ -40,6 +40,6 @@ return {
       },
     })
 
-    vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+    vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { desc = "toggle sidebar" })
   end,
 }

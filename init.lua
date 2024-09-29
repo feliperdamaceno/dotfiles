@@ -22,6 +22,6 @@ require("lazy").setup({
   },
   checker = {
     enabled = true,
-    frequency = 86400
+    frequency = 86400, -- once a day
   },
 })
