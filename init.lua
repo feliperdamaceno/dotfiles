@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 require("mappings")
+require("autocmds")
 
 local lazy = require("lazy")
 lazy.setup({
