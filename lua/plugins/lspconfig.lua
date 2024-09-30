@@ -1,27 +1,9 @@
 return {
   {
-    "williamboman/mason.nvim",
-    lazy = false,
-    config = function()
-      local mason = require("mason")
-
-      mason.setup({
-        ui = {
-          icons = {
-            package_pending = " ",
-            package_installed = " ",
-            package_uninstalled = " ",
-          },
-        },
-        max_concurrent_installers = 10,
-      })
-    end,
-  },
-  {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     config = function()
-      local lspconfig = require("lspconfig")
+      local lspconfig = require "lspconfig"
       local lsp_defaults = lspconfig.util.default_config
 
       local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -45,22 +27,22 @@ return {
       }
 
       lsp_defaults.capabilities = vim.tbl_deep_extend(
-        'force',
+        "force",
         lsp_defaults.capabilities,
-        require('cmp_nvim_lsp').default_capabilities(),
+        require("cmp_nvim_lsp").default_capabilities(),
         custom_capabilities
       )
 
-      local lspservers = require("config.lspservers")
+      local lspservers = require "config.lspservers"
 
       for server, config in pairs(lspservers.servers) do
         lspconfig[server].setup(config)
       end
 
-      local mason_lspconfig = require("mason-lspconfig")
-      mason_lspconfig.setup({
+      local mason_lspconfig = require "mason-lspconfig"
+      mason_lspconfig.setup {
         ensure_installed = vim.tbl_keys(lspservers.servers),
-      })
+      }
     end,
   },
   {

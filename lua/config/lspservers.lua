@@ -12,6 +12,10 @@ local servers = {
   },
   ts_ls = {},
   html = {},
+  emmet_ls = {
+    filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+  },
+  cssls = {},
   tailwindcss = {},
   gopls = {
     filetypes = { "go", "gomod", "gowork", "gotmlp" },
