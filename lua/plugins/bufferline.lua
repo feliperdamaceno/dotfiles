@@ -6,23 +6,23 @@ local options = {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  config = function ()
-    local config = require("bufferline")
+  config = function()
+    local bufferline = require "bufferline"
 
-    config.setup({
+    bufferline.setup {
       options = {
         mode = "buffers",
         themable = true,
-        separator_style = "thin",
-        buffer_close_icon = '󰅖',
-        modified_icon = '●',
-        close_icon = '',
-        left_trunc_marker = '',
-        right_trunc_marker = '',
+        separator_style = "thick",
+        buffer_close_icon = "󰅖",
+        modified_icon = "●",
+        close_icon = "",
+        left_trunc_marker = "",
+        right_trunc_marker = "",
         style_preset = {
-          config.style_preset.minimal,
-          config.style_preset.no_italic,
-          config.style_preset.no_bold,
+          bufferline.style_preset.minimal,
+          bufferline.style_preset.no_italic,
+          bufferline.style_preset.no_bold,
         },
         indicator = {
           icon = "▎",
@@ -36,17 +36,17 @@ local options = {
         show_buffer_close_icons = false,
         always_show_bufferline = true,
         diagnostics = "nvim_lsp",
-        close_command = function (bufnr)
+        close_command = function(bufnr)
           M.buf_kill("bd", bufnr, false)
         end,
       },
-    })
+    }
 
     vim.opt.termguicolors = true
 
     vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "cycle next buffer" })
     vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "cycle previous buffer" })
-    vim.keymap.set("n", "<leader>x", function ()
+    vim.keymap.set("n", "<leader>x", function()
       local bufnr = vim.api.nvim_get_current_buf()
       M.buf_kill("bd", bufnr, false)
     end, { desc = "close current buffer" })
@@ -73,11 +73,12 @@ function M.buf_kill(kill_command, bufnr, force)
       choice = fn.confirm(fmt([[Save changes to "%s"?]], bufname), "&Yes\n&No\n&Cancel")
       if choice == 1 then
         vim.api.nvim_buf_call(bufnr, function()
-          vim.cmd("w")
+          vim.cmd "w"
         end)
       elseif choice == 2 then
         force = true
-      else return
+      else
+        return
       end
     elseif api.nvim_get_option_value("buftype", { buf = 0 }) == "terminal" then
       choice = fn.confirm(fmt([[Close "%s"?]], bufname), "&Yes\n&No\n&Cancel")

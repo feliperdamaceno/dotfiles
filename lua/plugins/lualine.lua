@@ -1,20 +1,20 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local config = require('lualine')
+    local lualine = require "lualine"
 
-    config.setup({
+    lualine.setup {
       options = {
         icons_enabled = true,
-        theme = "nightfly"
+        theme = "nightfly",
       },
       sections = {
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
-      }
-    })
+        lualine_z = {},
+      },
+    }
   end,
 }

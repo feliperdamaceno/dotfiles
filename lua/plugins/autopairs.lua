@@ -1,12 +1,12 @@
-return  {
+return {
   "windwp/nvim-autopairs",
   config = function()
-    local config = require("nvim-autopairs")
+    local nvim_autopairs = require "nvim-autopairs"
 
-    config.setup({
+    nvim_autopairs.setup {
       fast_wrap = {},
       disable_filetype = { "TelescopePrompt", "vim" },
-    })
+    }
 
     -- setup cmp for autopairs
     local cmp_autopairs = require "nvim-autopairs.completion.cmp"

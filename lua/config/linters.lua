@@ -6,7 +6,7 @@ local linters = {
 }
 
 local ensure_installed = {}
--- Iterate through each formatter in the formatters table
+-- Iterate through each linter in the linters table
 for _, tools in pairs(linters) do
   for _, tool in ipairs(tools) do
     if not vim.tbl_contains(ensure_installed, tool) then

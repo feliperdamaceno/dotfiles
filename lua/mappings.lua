@@ -14,10 +14,10 @@ vim.keymap.set("i", "<C-j>", "<Down>", { desc = "move down" })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "move up" })
 
 -- panel navigation
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', { desc = "switch panel up" })
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', { desc = "switch panel down" })
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>', { desc = "switch panel left" })
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', { desc = "switch panel right" })
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { desc = "switch panel up" })
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", { desc = "switch panel down" })
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", { desc = "switch panel left" })
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { desc = "switch panel right" })
 
 -- comments
 vim.keymap.set("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })

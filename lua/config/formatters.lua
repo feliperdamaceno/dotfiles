@@ -10,6 +10,7 @@ local formatters = {
   go = { "goimports-reviser", "gofumpt", "golines" },
   lua = { "stylua" },
   yaml = { "prettier" },
+  markdown = { "prettier" },
 }
 
 local ensure_installed = {}

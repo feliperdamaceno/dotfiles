@@ -6,9 +6,9 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    local config = require("nvim-tree")
+    local nvim_tree = require "nvim-tree"
 
-    config.setup({
+    nvim_tree.setup {
       filters = { dotfiles = false },
       disable_netrw = true,
       hijack_cursor = true,
@@ -41,8 +41,8 @@ return {
           },
         },
       },
-    })
+    }
 
-    vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { desc = "toggle sidebar" })
+    vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "toggle sidebar" })
   end,
 }
