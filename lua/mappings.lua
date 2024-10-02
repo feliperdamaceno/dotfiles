@@ -22,3 +22,9 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { desc = "switch panel right" })
 -- comments
 vim.keymap.set("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 vim.keymap.set("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
+
+-- editor
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selected lines down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selected lines up" })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "find and replace" })
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "paste without loosing buffer" })

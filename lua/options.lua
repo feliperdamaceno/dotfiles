@@ -9,6 +9,7 @@ vim.o.showmode = false -- don't show mode (e.g. -- insert --)
 vim.o.clipboard = "unnamedplus" -- use system clipboard
 vim.o.cursorline = true -- highlight the current line
 vim.o.cursorlineopt = "number" -- highlight only the line number
+vim.opt.scrolloff = 8 -- keeps 8 lines visible when scrolling
 
 -- indentation
 vim.o.expandtab = true -- convert tabs to spaces
