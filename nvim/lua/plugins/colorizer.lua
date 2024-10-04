@@ -7,7 +7,7 @@ return {
       "*",
       "!lazy",
     }, {
-      mode = "foreground",
+      mode = "background",
       names = false,
       RGB = true,
       RRGGBB = true,
