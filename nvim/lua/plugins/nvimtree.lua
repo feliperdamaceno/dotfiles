@@ -9,7 +9,14 @@ return {
     local nvim_tree = require "nvim-tree"
 
     nvim_tree.setup {
-      filters = { dotfiles = false },
+      filters = {
+        dotfiles = false,
+        custom = {
+          "**/.DS_Store",
+          ".git",
+          "node_modules",
+        },
+      },
       disable_netrw = true,
       hijack_cursor = true,
       sync_root_with_cwd = true,
