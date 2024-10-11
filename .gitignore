@@ -2,4 +2,4 @@
 
 !.gitignore
 !/nvim
-!/tmux
+!/tmux/tmux.conf
