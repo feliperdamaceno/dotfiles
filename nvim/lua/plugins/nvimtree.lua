@@ -13,7 +13,6 @@ return {
         dotfiles = false,
         custom = {
           "**/.DS_Store",
-          ".git",
           "node_modules",
         },
       },
@@ -47,6 +46,10 @@ return {
             git = { unmerged = "" },
           },
         },
+      },
+      git = {
+        enable = true,
+        ignore = false,
       },
     }
 
