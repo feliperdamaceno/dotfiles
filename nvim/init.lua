@@ -29,6 +29,7 @@ lazy.setup {
     enabled = true,
     frequency = 86400, -- once a day
   },
+  concurrency = 10,
   ui = {
     icons = {
       ft = "",
